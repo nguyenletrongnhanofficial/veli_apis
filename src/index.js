@@ -1,9 +1,9 @@
 //#region import package
-import express from "express";
-import dotenv from "dotenv";
-import mongoose from "mongoose";
 import cors from "cors";
-import http, { get } from "http";
+import dotenv from "dotenv";
+import express from "express";
+import http from "http";
+import mongoose from "mongoose";
 
 //#region initialize server
 const app = express();
@@ -23,11 +23,15 @@ mongoose.set('strictQuery', true);
 
 //#region import router
 import authRouter from "./routers/auth.router.js";
+import conversationRouter from "./routers/conversation.router.js";
+import messageRouter from "./routers/message.router.js";
 //#end region
 
 
 //#region setup router
 app.use("/auth", authRouter);
+app.use("/conversation", conversationRouter);
+app.use("/message", messageRouter);
 //#end region
 
 //#region connect to database

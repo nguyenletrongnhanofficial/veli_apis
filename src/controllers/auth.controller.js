@@ -1,7 +1,6 @@
-import User from "../models/user.js";
-import validator from "validator";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import validator from "validator";
+import User from "../models/user.js";
 export const AuthController = {
   //Region get all user
   getAllUser: async (req, res) => {
